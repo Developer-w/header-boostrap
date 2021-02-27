@@ -1,0 +1,25 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+body {
+    font-family: $font-page;
+    background-color: $bg-color;
+}
+
+
+:root {
+    scroll-behavior: smooth;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 75em;
+    overflow: hidden;
+    margin: auto;
+    padding: 3.75em 0;
+}

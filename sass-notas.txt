@@ -1,0 +1,140 @@
+################################################
+tipos de carpetas y variantes .scss
+
+base
+_variables.scss
+_settingPage.scss
+
+components
+_header.scss
+_footer.scss
+_navbar.scss
+_main.scss
+
+mediaQuery
+_query.scss
+
+
+###############################################
+_variables
+
+$color-primary: #222831;
+$bgcolor-NavB: #30475e;
+$bg-color: #dddddd;
+$color-secundary: whith;
+$gradient-header: linear-gradient(to top, rgba(197, 113, 245, 0.63) 0%, rgba(250, 113, 204, 0.692) 100%);
+$font-page: 'Lato', sans-serif;
+
+##############################################
+style.scss
+@use "base"
+@use "modulo creado scss"
+
+
+_base.scss
+
+body{
+    font-family: $font-page;
+    background-color: $bg-color;
+}
+
+.header {
+    background-image: $gradient-header, url(../img/computer.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+##############################################
+
+###########//MIxins//Funciones//###########
+@mixin crearborder(){
+    border: 5px solid #30475e;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #30475e;
+}
+----asociando a elemnetos----
+.caja {
+    @include crearborder()
+}
+
+.listado{
+    @include crearborder()
+}
+----asociando a elemnetos----
+
+##################################################
+$color: #30475e;
+$size: 15px;
+$shadow: #dddddd;
+##################################################
+
+@mixin crearborder($color, $size, $shadow){
+    border: 5px solid $color;
+    border-radius: $size;
+    box-shadow: 0px 0px size $shadow;
+}
+
+.caja {
+    @include crearborder(#30475e, 15px, #dddddd)
+}
+
+.listado{
+    @include crearborder(#dddddd, 20px, #30475e)
+}
+
+##################################################
+
+@mixin reset-page(){
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+@mixin body-page(){
+    font-family: $font-page;
+    background-color: $color-light;
+}
+
+@mixin $conteneder(){
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+}
+
+@mixin $header(){
+    background-image: $gradient-header, url(../img/computer.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+###########//MIxins//Funciones//###########
+
+
+
+########//herencia//########
+
+%class-normal {
+    padding: 0;
+    height: 100%;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.class{
+    @extend %text-normal;
+}
+
+########//herencia//########
+
+
+
